@@ -31,6 +31,7 @@ class Solution {
     fun solution(code: String): String {
         val ret = StringBuilder()
         var mode = 0
+        // mapIndexed는 반환값이 있고 forEachIndexed는 없다.        
         code.forEachIndexed { index, _ ->
             if (code[index] == '1') {
                 mode = 1 - mode
@@ -41,3 +42,6 @@ class Solution {
         return ret.toString().ifEmpty { "EMPTY" }
     }
 }
+
+// mapIndexed는 반환값이 있고 forEachIndexed는 없다.
+// ex) val mappedList = list.mapIndexed / list.forEachIndexed
