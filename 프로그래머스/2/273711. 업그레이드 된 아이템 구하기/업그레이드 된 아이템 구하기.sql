@@ -1,8 +1,11 @@
-SELECT item_id, item_name, rarity
-FROM item_info
-WHERE item_id IN (SELECT t.item_id
-                  FROM item_info i
-                           JOIN item_tree t
-                                ON i.item_id = t.parent_item_id
-                  WHERE rarity = 'RARE')
-ORDER BY item_id DESC
+SELECT ITEM_ID, ITEM_NAME, RARITY
+FROM ITEM_INFO
+WHERE ITEM_ID IN 
+(
+    SELECT t.ITEM_ID
+    FROM ITEM_INFO i
+    JOIN ITEM_TREE t
+    ON i.ITEM_ID = t.PARENT_ITEM_ID
+    WHERE RARITY = 'RARE'
+)
+ORDER BY ITEM_ID DESC;
